@@ -5,22 +5,22 @@ import java.util.Scanner;
 public class JavaCalcExc {
     public static void main(String[] args) {
         System.out.println("This is the Java Calculator Exercise");
-        Scanner scanner = new Scanner(System.in);
-        Runner running = new Runner(System.in);
+        Scanner sc = new Scanner(System.in);
+        boolean running = true;
 
         
         System.out.println("This is the calculator exercise.");
 
         while (running) {
             System.out.println("Please enter the number you wish to calculate:");
-            double num1= Scanner.nextDouble();
-            boolean running = true;
+            double num1= sc.nextDouble();
+
 
             System.out.println("Now enter the symbol desired for calculation (+, -, *, /):");
-            char operator = Scanner.next().charAt (0);
+            char operator = sc.next().charAt (0);
 
             System.out.println("Please now enter the second number you wish to calculate:");
-            double num2 = Scanner.nextDouble();
+            double num2 = sc.nextDouble();
 
             double result = 0;
 
@@ -50,7 +50,7 @@ public class JavaCalcExc {
             System.out.println("The result is: " + result);
 
             System.out.println("Would you like to perform another calculation? (yes/no):");
-            String choice = scanner.next();
+            String choice = sc.next();
 
             if (!choice.equalsIgnoreCase("yes")) {
                 running = false;
@@ -58,6 +58,6 @@ public class JavaCalcExc {
         }
 
         System.out.println("Thank you for using the Calculator Application. Goodbye!");
-        scanner.close();
+        sc.close();
     }
 }
